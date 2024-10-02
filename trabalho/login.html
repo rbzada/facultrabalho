@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro</title>
+   <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 id="form-title">Cadastro</h2>
+    <input type="text" id="username" placeholder="Usuário" required>
+    <input type="password" id="password" placeholder="Senha" required>
+    <button id="submit-btn">Cadastrar</button>
+    <p id="toggle-link">Já possui uma conta? Faça login</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+<script>
+const users = JSON.parse(localStorage.getItem('users')) || [];
+
+const formTitle = document.getElementById('form-title');
+const submitBtn = document.getElementById('submit-btn');
+const toggleLink = document.getElementById('toggle-link');
+
+let isLogin = false;
+
+function toggleForm() {
+    isLogin = !isLogin;
+    formTitle.innerText = isLogin ? 'Login' : 'Cadastro';
+    submitBtn.innerText = isLogin ? 'Entrar' : 'Cadastrar';
+    toggleLink.innerText = isLogin ? 'Não possui uma conta? Cadastre-se' : 'Já possui uma conta? Faça login';
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+}
+
+function handleSubmit() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (!username || !password) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    if (isLogin) {
+        const user = users.find(user => user.username === username && user.password === password);
+        if (user) {
+            alert('Login bem-sucedido!');
+        } else {
+            alert('Usuário ou senha incorretos.');
+        }
+    } else {
+        if (users.find(user => user.username === username)) {
+            alert('Usuário já existe.');
+        } else {
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Cadastro realizado com sucesso! Você pode fazer login agora.');
+            toggleForm();
+        }
+    }
+}
+
+submitBtn.addEventListener('click', handleSubmit)
+function handleSubmit() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (!username || !password) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+    }
+
+    if (isLogin) {
+        const user = users.find(user => user.username === username && user.password === password);
+        if (user) {
+            alert('Login bem-sucedido!');
+            window.location.href = 'file:/C:/Users/Gabriel/Documents/trabalho/acesso.html'; // Redireciona após login
+        } else {
+            alert('Usuário ou senha incorretos.');
+        }
+    } else {
+        if (users.find(user => user.username === username)) {
+            alert('Usuário já existe.');
+        } else {
+            users.push({ username, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Cadastro realizado com sucesso! Você pode fazer login agora.');
+            toggleForm();
+        }
+    }
+}
+;
+toggleLink.addEventListener('click', toggleForm);
+</script>

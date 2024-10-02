@@ -1,0 +1,11 @@
+img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit:cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px dotted pink;
+    transform: scale(00.3s);
+}
+body {
+    background-color: black;}
