@@ -1,0 +1,98 @@
+/* Definindo uma fonte agradável */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2e2e2e; /* Preto */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container do formulário */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Título do formulário */
+h2 {
+    color: #ff3366; /* Rosa */
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Estilo dos rótulos */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+/* Estilo dos campos de entrada */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 2px solid #ff3366; /* Rosa */
+    border-radius: 6px;
+    background-color: #333; /* Escuro */
+    color: #fff;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+/* Efeito de foco nos campos */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #ff6699; /* Rosa mais claro */
+    outline: none;
+}
+
+/* Mensagens de erro */
+.error {
+    color: #ff4d4d; /* Vermelho */
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Estilo do botão de envio */
+input[type="submit"] {
+    background: #ff3366; /* Rosa */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Efeito no botão */
+input[type="submit"]:hover {
+    background: #ff6699; /* Rosa mais claro */
+}
+
+/* Link para cadastro */
+a {
+    color: #ff3366; /* Rosa */
+    text-decoration: none;
+    margin-top: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,31 @@
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('https://miro.medium.com/max/3072/1*XMJIPaq73Qw7MoLNx9_zig.gif'); /* URL do GIF */
+    background-size: cover; /* Faz o GIF cobrir toda a área */
+    background-position: center; /* Centraliza o GIF */
+    opacity: 0.2; /* Ajuste a opacidade aqui (0.0 a 1.0) */
+    z-index: -1; /* Coloca a camada atrás do conteúdo */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que as imagens se organizem em várias linhas */
+    justify-content: center;
+    max-width: 1000px; /* Limita a largura total do conteúdo */
+}
+
+.container a {
+    margin: 10px; /* Espaçamento entre as imagens */
+}
+
+button {
+    margin-top: 20px; /* Espaçamento acima do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+}

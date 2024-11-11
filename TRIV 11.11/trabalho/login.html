@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Página de Login</h2>
+    
+    <form id="loginForm" onsubmit="return validarLogin()">
+        <label for="emailLogin">E-mail:</label>
+        <input type="email" id="emailLogin" name="emailLogin">
+        <span id="erroEmailLogin" class="error"></span><br><br>
+
+        <label for="senhaLogin">Senha:</label>
+        <input type="password" id="senhaLogin" name="senhaLogin">
+        <span id="erroSenhaLogin" class="error"></span><br><br>
+
+        <input type="submit" value="Entrar">
+    </form>
+
+    <script>
+        function validarLogin() {
+            let valido = true;
+
+            // Limpar mensagens de erro anteriores
+            document.getElementById("erroEmailLogin").textContent = "";
+            document.getElementById("erroSenhaLogin").textContent = "";
+
+            // Obter os valores do formulário de login
+            const emailLogin = document.getElementById("emailLogin").value;
+            const senhaLogin = document.getElementById("senhaLogin").value;
+
+            // Verificar se o usuário foi cadastrado
+            const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+            if (!usuario) {
+                document.getElementById("erroEmailLogin").textContent = "Nenhum usuário encontrado. Faça o cadastro primeiro.";
+                valido = false;
+            } else {
+                // Verificar se o e-mail e senha correspondem aos dados do usuário
+                if (usuario.email !== emailLogin) {
+                    document.getElementById("erroEmailLogin").textContent = "E-mail não encontrado.";
+                    valido = false;
+                } else if (usuario.senha !== senhaLogin) {
+                    document.getElementById("erroSenhaLogin").textContent = "Senha incorreta.";
+                    valido = false;
+                }
+            }
+
+            if (valido) {
+                alert("Login realizado com sucesso!");
+                window.location.href = "index.html";  // Página inicial após o login (pode ser uma página que você criar)
+            }
+
+            return false;  // Impede o envio do formulário padrão
+        }
+    </script>
+</body>
+</html>

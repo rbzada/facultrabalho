@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="imagem/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="acesso.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triv | Os Melhores Jogos Grátis!</title>
+    <link rel="stylesheet" href="acesso.css">
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo da página */
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1d;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://i.pinimg.com/originals/4c/2d/5f/4c2d5fdb384a5e68eda0cc5886c00417.gif'); /* URL do GIF */
+            background-size: cover; /* Faz o GIF cobrir toda a área */
+            background-position: center; /* Centraliza o GIF */
+            opacity: 0.3; /* Ajuste a opacidade aqui (0.0 a 1.0) */
+            z-index: -1; /* Coloca a camada atrás do conteúdo */
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff00cc;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #bdc3c7;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        /* Estilo do cabeçalho */
+        header {
+            width: 100%;
+            background-color: #000; /* Cabeçalho totalmente preto */
+            padding: 5px 20px; /* Cabeçalho mais compacto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            border-bottom: 2px solid #ff00cc;
+        }
+
+        /* Logo dentro do cabeçalho */
+        .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; /* Permite que o logo seja centralizado */
+        }
+
+        .logo {
+            width: 120px; /* Tamanho da logo */
+            height: 120px; /* Tamanho fixo */
+            border-radius: 50%; /* Círculo ao redor da logo */
+            border: 5px solid #f30606;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 10; /* Garante que a logo esteja sempre acima de outros elementos */
+        }
+
+        /* Efeito hover para a logo */
+        .logo:hover {
+            transform: scale(0.9);
+            box-shadow: 0 7px 22px rgba(243, 6, 144, 0.6);
+        }
+
+        /* Navegação */
+        nav {
+            position: absolute;
+            right: 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 5; /* Certifica-se de que a navegação fique por cima da logo */
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ff00cc;
+        }
+
+        /* Estilo do botão */
+        button {
+            padding: 15px 30px;
+            background-color: #8a0083;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            outline: none;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #f30690;
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Estilo do conteúdo principal */
+        .content {
+            margin-top: 120px; /* Ajuste para dar mais espaço entre o conteúdo e o cabeçalho */
+            text-align: center;
+            max-width: 800px;
+        }
+
+        /* Estilos do botão no hover */
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Adicionando uma leve sombra ao conteúdo */
+        .content {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo-container">
+            <img src="imagem/logo.png" alt="Logo Triv" class="logo">
+        </div>
+        <nav>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="cadastro.html">Cadastro</a> 
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <h1>Bem-Vindo ao Triv!</h1>
+        <p>Triv é uma página dedicada a uma variedade de jogos online, proporcionando diversão e entretenimento para todos os públicos. Com uma interface intuitiva, os usuários podem explorar diferentes estilos de jogos, desafiar amigos e mergulhar em uma experiência envolvente. A página busca ser o destino certo para os amantes de jogos na web.</p>
+
+        <!-- Botão de redirecionamento -->
+        <button onclick="window.location.href='cadastro.html';">
+            Comece a Jogar!
+        </button>
+    </div>
+</body>
+
+</html>
